@@ -1,0 +1,17 @@
+name: pharmasync
+description: A medical app for both iOS and Android.
+publish_to: 'none'
+version: 1.0.0+1
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_tts: ^3.8.5
+  hive: ^2.2.3
+  hive_flutter: ^1.1.0
+  image_picker: ^1.0.4
+  cupertino_icons: ^1.0.2
+
+flutter:
+  uses-material-design: true
