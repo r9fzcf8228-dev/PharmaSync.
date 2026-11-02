@@ -13,8 +13,9 @@ jobs:
       - uses: subosito/flutter-action@v2
         with:
           flutter-version: '3.19.0'
-      # إجبار Flutter على استخدام اسم صحيح
       - run: flutter create . --project-name pharmasync --platforms=android,ios
+      # السطر السحري الذي يعدل إصدار الأندرويد المطلوب
+      - run: sed -i 's/minSdkVersion flutter.minSdkVersion/minSdkVersion 21/' android/app/build.gradle
       - run: flutter pub get
       - run: flutter build apk --release
       - uses: actions/upload-artifact@v4
@@ -29,7 +30,6 @@ jobs:
       - uses: subosito/flutter-action@v2
         with:
           flutter-version: '3.19.0'
-      # إجبار Flutter على استخدام اسم صحيح
       - run: flutter create . --project-name pharmasync --platforms=android,ios
       - run: flutter pub get
       - run: flutter build ios --release --no-codesign
